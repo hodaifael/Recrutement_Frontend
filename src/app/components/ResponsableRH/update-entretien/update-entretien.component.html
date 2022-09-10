@@ -1,0 +1,75 @@
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Create profile
+
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="../home"><i class="zmdi zmdi-home"></i> MT-REKRUTE</a></li>
+                    <li class="breadcrumb-item active">Create profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Basic Validation -->
+
+        <!-- #END# Basic Validation -->
+        <!-- Advanced Validation -->
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-12 col-sm-12">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="card">
+                    <form id="form_advanced_validation" (ngSubmit)="addEntretien()">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="header">
+
+                                </div>
+                                <div class="body">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">type</label>
+                                        <select style="border:1px solid ; " name="type" [(ngModel)]="entretien.type" class="form-control show-tick" required>
+                                                <option></option>
+                                                <option value="RH">entretien RH</option>
+                                                <option value="technique">entretien technique</option>
+                                            </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">date</label>
+                                        <input type="date" class="form-control" name="date" [(ngModel)]="entretien.date" required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">start heure</label>
+                                        <input type="time" min="09:00" max="18:00" class="form-control" name="start_heure" [(ngModel)]="entretien.start_heure" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">end heure</label>
+                                        <input type="time" min="09:00" max="18:00" class="form-control" name="end_heure" [(ngModel)]="entretien.end_heure" required>
+
+                                    </div>
+
+                                    <button class="btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Advanced Validation -->
+        <!-- Validation Stats -->
+
+        <!-- #END# Validation Stats -->
+    </div>
+</section>

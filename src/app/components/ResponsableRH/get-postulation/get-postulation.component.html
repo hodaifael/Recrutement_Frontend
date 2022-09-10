@@ -1,0 +1,199 @@
+<section class="content profile-page">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12">
+                <div class="card overflowhidden m-t-20">
+                    <div class="header">
+                        <h2>Posted By:</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="inbox-widget list-unstyled clearfix">
+                            <li *ngFor="let emp of postulations" class="inbox-inner">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8 ">
+                                        <a (click)="findUtilisateur(emp.candidat.id)">
+                                            <div class="inbox-item">
+                                                <div class="inbox-img"> <img style="height: 50px;" *ngIf="emp.candidat.image == undefined" src="assets/images/profile.jpg" alt=""> <img *ngIf="emp.candidat.image !== undefined" src="{{ path }}/{{ emp.candidat.image }}" alt="">                                                    </div>
+                                                <div class="inbox-item-info">
+                                                    <p class="author">{{emp.candidat.nom}} {{emp.candidat.prenom}}</p>
+                                                    <p class="inbox-message">{{emp.candidat.numero_telephone_portable}}</p>
+                                                    <p class="inbox-date">{{emp.date}}</p>
+                                                </div>
+                                            </div>
+
+                                        </a>
+                                    </div>
+                                    <div *ngIf="checktypeIfResponsableRH()" class="col-lg-4 col-md-8 ">
+                                        <a (click)="update(emp.candidat.id)" id="p2" class="btn btn-sm waves-effect button_add_cart" data-toggle="modal" data-target="#exampleModalCenter1">
+                                            fix appointment 
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="user_id !== null" class="col-lg-8 col-md-12">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="card overflowhidden m-t-20">
+                            <div class="profile-header">
+                                <div class="profile_info row">
+                                    <div class="col-lg-3 col-md-4 col-12">
+                                        <div class="profile-image float-md-right"> <img *ngIf="candidat.image == undefined" src="assets/images/profile.jpg" alt=""> <img *ngIf="candidat.image !== undefined" src="{{ path }}/{{ candidat.image }}" alt=""></div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-8 col-12">
+                                        <h4 class="m-t-5 m-b-0"><strong>{{ candidat.nom }} {{ candidat.prenom }}</strong> </h4>
+                                        <p style="margin-bottom: 2px;font-size: 16px;">Email : {{candidat.adresse_email}}</p>
+                                        <p style="margin-bottom: 2px;font-size: 16px;">Phone : {{candidat.numero_telephone_portable}} </p>
+                                        <p style="font-size: 16px;">Address : {{candidat.adresse_postale}} </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="row clearfix">
+                    <div class="card overflowhidden m-t-20" style="padding-top: 40px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row clearfix">
+                                <div style="min-width: 500px;" class="col-lg-11 col-md-12 col-sm-12">
+                                    <strong><h3 class="m-t-5 m-b-0"> FORMATION </h3></strong>
+                                </div>
+
+                            </div>
+                            <br>
+                            <ul class="cbp_tmtimeline">
+
+                                <li *ngFor="let emp of formations ">
+                                    <time class="cbp_tmtime"><span>from {{emp.start_date}}</span> <span>to {{emp.end_date}}</span></time>
+                                    <div class="cbp_tmicon bg-info"><i class="zmdi zmdi-label"></i></div>
+                                    <div class="cbp_tmlabel" style="background: #99deff;">
+                                        <h2><strong>school : </strong> <span>{{ emp.school }}  </span></h2>
+                                        <h2><strong>degree : </strong> <span>{{ emp.degree }}</span></h2>
+                                        <h2><strong>field_study : </strong> <span>{{ emp.field_study }}</span></h2>
+                                        <h2><strong>grade : </strong> <span>{{ emp.grade }}</span></h2>
+                                        <h2 style="border-bottom: 0px solid "><strong>description : </strong><span>{{ emp.description }}</span></h2>
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="card overflowhidden m-t-20" style="padding-top: 40px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row clearfix">
+                                <div class="col-lg-11 col-md-12 col-sm-12">
+                                    <strong><h3 class="m-t-5 m-b-0">EXPERIENCE</h3></strong>
+                                </div>
+
+
+                            </div>
+
+                            <br>
+                            <ul class="cbp_tmtimeline">
+
+                                <li *ngFor="let emp of experiences ">
+                                    <time class="cbp_tmtime"><span>from {{emp.start_date}}</span> <span>to {{emp.end_date}}</span></time>
+                                    <div class="cbp_tmicon bg-blush"><i class="zmdi zmdi-bookmark-outline"></i></div>
+                                    <div class="cbp_tmlabel" style="background: #DC72B4;">
+                                        <h2><strong>company : </strong> <span>{{ emp.company }}  </span></h2>
+                                        <h2><strong>field_job : </strong> <span>{{ emp.field_job }}</span></h2>
+                                        <h2 style="border-bottom: 0px solid "><strong>description : </strong><span>{{ emp.description }}</span></h2>
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Add Entretien :</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-lg-1 col-md-12 col-sm-12">
+                    </div>
+                    <div class="col-lg-10 col-md-12 col-sm-12">
+                        <form id="form_advanced_validation" (ngSubmit)="addEntretien()">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="header">
+
+                                    </div>
+                                    <div class="body">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">type</label>
+                                            <select style="border:1px solid ; " name="type" [(ngModel)]="entretien.type" class="form-control show-tick" required>
+                                                    <option></option>
+                                                    <option value="RH">entretien RH</option>
+                                                    <option value="technique">entretien technique</option>
+                                                </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">date</label>
+                                            <input type="date" class="form-control" name="date" [(ngModel)]="entretien.date" required>
+
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">start heure</label>
+                                            <input type="time" min="09:00" max="18:00" class="form-control" name="start_heure" [(ngModel)]="entretien.start_heure" required>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">end heure</label>
+                                            <input type="time" min="09:00" max="18:00" class="form-control" name="end_heure" [(ngModel)]="entretien.end_heure" required>
+
+                                        </div>
+
+
+
+
+                                        <button class="btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

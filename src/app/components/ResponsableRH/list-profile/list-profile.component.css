@@ -1,0 +1,80 @@
+@media screen and (max-width: 1225px) and (min-width: 1045px) {
+    .priority-5 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+
+@media screen and (max-width: 1045px) and (min-width: 835px) {
+    .priority-5 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+    .priority-4 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .priority-5 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+    .priority-4 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+    .priority-3 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+    .priority-2 {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+
+.button_add_cart {
+    width: 200px;
+    font-weight: bold;
+    color: white;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}
+
+.button_submit {
+    width: 140px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}
+
+.button_all {
+    width: 100px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}

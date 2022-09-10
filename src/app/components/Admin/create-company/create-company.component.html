@@ -1,0 +1,151 @@
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>create Company
+
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="../home"><i class="zmdi zmdi-home"></i> MT-REKRUTE</a></li>
+                    <li class="breadcrumb-item active">create Company</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Basic Validation -->
+
+        <!-- #END# Basic Validation -->
+        <!-- Advanced Validation -->
+        <div class="row clearfix">
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="card">
+                    <form id="form_advanced_validation" (ngSubmit)="createCompany()">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="header">
+
+                                </div>
+                                <div class="body">
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">name</label>
+                                        <input type="text" class="form-control" name="name" [(ngModel)]="company.name" required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">secteur</label>
+                                        <select style="border:1px solid ; " name="secteur" [(ngModel)]="company.secteur" class="form-control show-tick" required>
+                                            <option value="Agence pub / Marketing Direct">Agence pub / Marketing Direct		</option>
+                                            <option value="Agriculture / Environnement">Agriculture / Environnement          </option>
+                                            <option value="Agroalimentaire">Agroalimentaire                      </option>
+                                            <option value="Ameublement / Décoration">Ameublement / Décoration             </option>
+                                            <option value="Assurance / Courtage">Assurance / Courtage                 </option>
+                                            <option value="Audiovisuel">Audiovisuel                          </option>
+                                            <option value="Automobile / Motos / Cycles">Automobile / Motos / Cycles          </option>
+                                            <option value="Autres Industries">Autres Industries                    </option>
+                                            <option value="Autres services">Autres services                      </option>
+                                            <option value="Aéronautique / Spatial">Aéronautique / Spatial               </option>
+                                            <option value="BTP / Génie Civil">BTP / Génie Civil                    </option>
+                                            <option value="Banque / Finance">Banque / Finance                     </option>
+                                            <option value="Centre d'appel">Centre d'appel                       </option>
+                                            <option value="Chimie / Parachimie / Peintures">Chimie / Parachimie / Peintures      </option>
+                                            <option value="Communication / Evénementiel">Communication / Evénementiel         </option>
+                                            <option value="Comptabilité / Audit">Comptabilité / Audit                 </option>
+                                            <option value="Conseil / Etudes">Conseil / Etudes                     </option>
+                                            <option value="Cosmétique / Parfumerie / Luxe">Cosmétique / Parfumerie / Luxe       </option>
+                                            <option value="Distribution">Distribution                         </option>
+                                            <option value="Electricité">Electricité                          </option>
+                                            <option value="Electro-mécanique / Mécanique">Electro-mécanique / Mécanique        </option>
+                                            <option value="Energie">Energie                              </option>
+                                            <option value="Enseignement / Formation">Enseignement / Formation             </option>
+                                            <option value="Extraction / Mines">Extraction / Mines                   </option>
+                                            <option value="Ferroviaire">Ferroviaire                          </option>
+                                            <option value="Hôtellerie / Restauration">Hôtellerie / Restauration            </option>
+                                            <option value="Immobilier / Promoteur / Agence">Immobilier / Promoteur / Agence      </option>
+                                            <option value="Import / Export / Négoce">Import / Export / Négoce             </option>
+                                            <option value="Informatique">Informatique                         </option>
+                                            <option value="Internet / Multimédia">Internet / Multimédia                </option>
+                                            <option value="Juridique / Cabinet d’avocats">Juridique / Cabinet d’avocats        </option>
+                                            <option value="Matériel Médical">Matériel Médical                     </option>
+                                            <option value="Métallurgie / Sidérurgie">Métallurgie / Sidérurgie             </option>
+                                            <option value="Offshoring / Nearshoring">Offshoring / Nearshoring             </option>
+                                            <option value="Papier / Carton">Papier / Carton                      </option>
+                                            <option value="Pharmacie / Santé">Pharmacie / Santé                    </option>
+                                            <option value="Presse">Presse                               </option>
+                                            <option value="Pétrole / Gaz">Pétrole / Gaz                        </option>
+                                            <option value="Recrutement / Intérim">Recrutement / Intérim                </option>
+                                            <option value="Service public / Administration">Service public / Administration      </option>
+                                            <option value="Tabac">Tabac                                </option>
+                                            <option value="Telecom">Telecom                              </option>
+                                            <option value="Textile / Cuir">Textile / Cuir                       </option>
+                                            <option value="Tourisme / Voyage / Loisirs">Tourisme / Voyage / Loisirs          </option>
+                                            <option value="Transport / Messagerie / Logistique">Transport / Messagerie / Logistique  </option>
+                                            </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">address </label>
+                                        <input type="text" class="form-control" name="address" [(ngModel)]="company.address" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="btn btn-default p-0">
+                                            <input type="file" (change)="selectFile($event)" />
+                                        </label>
+                                    </div>
+
+
+                                    <button class="btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="card product_item_list">
+                    <div class="body table-responsive">
+                        <table class="table table-hover m-b-0" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>image</th>
+                                    <th>name</th>
+                                    <th>secteur</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let emp of companies">
+                                    <td>
+                                        <div class="profile-image float-md-center"> <img style="border-radius: 20px; width: 80px;" *ngIf="emp.image == undefined" src="assets/images/profile.jpg" alt=""> <img style="border-radius: 20px; width: 130px;" *ngIf="emp.image !== undefined" src="{{ path }}/{{ emp.image }}"
+                                                alt=""></div>
+                                    </td>
+                                    <td><span class="text-muted">{{ emp.name }}</span></td>
+                                    <td><span class="text-muted">{{ emp.secteur }}</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- #END# Advanced Validation -->
+        <!-- Validation Stats -->
+
+        <!-- #END# Validation Stats -->
+    </div>
+</section>

@@ -1,0 +1,24 @@
+#brand-logo {
+    font-size: 34px;
+}
+
+#app-navbar {
+    color: white;
+    position: fixed;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}
+
+body {
+    background: #eee;
+}
+
+.nav-href {
+    color: white;
+    font-size: 17px;
+}
+
+.button_modal {
+    width: 200px;
+    color: white;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}

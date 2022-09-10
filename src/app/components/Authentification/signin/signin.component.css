@@ -1,0 +1,16 @@
+.logo {
+    border-radius: 25% 10%;
+    width: 50px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.slideDiv {
+    border-radius: 25% 10%;
+}
+
+.button_modal {
+    width: 200px;
+    color: white;
+    background-image: radial-gradient(circle at 0% -25%, #FF8947 0%, #FF8354 0, #DA2C94 42%, #3E13A5 110%);
+}

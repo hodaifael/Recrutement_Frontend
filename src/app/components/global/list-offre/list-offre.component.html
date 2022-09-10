@@ -1,0 +1,275 @@
+<section style="margin-top: 100px;" class="content blog-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-8 left-box">
+                <div class="card card-body">
+                    <div class="card">
+                        <p class="para1"> <b>Filter By :</b> </p>
+                        <form (ngSubmit)="findListOffre()">
+                            <div class="row ">
+
+                                <div class="mb-3 ">
+                                    <button class="btn btn-sm waves-effect button_all" (click)="getAll()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">All</button>
+                                    <br>
+                                    <button class="btn btn-sm waves-effect button_submit" type="submit" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">UPDATE</button>
+                                </div>
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">type contrat</label>
+                                    <select style="border:1px solid ;width: 240px; " name="type_contrat" [(ngModel)]="offre.type_contrat" class="form-control show-tick" required>
+                                            <option value="undefined" selected></option>
+                                            <option value="Alternance">Alternance</option>
+                                            <option value="CDD">CDD</option>
+                                            <option value="CDI">CDI</option>
+                                            <option value="Stage">Stage</option>
+                                        </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">secteur</label>
+                                    <select style="border:1px solid;width: 240px; " name="secteur" [(ngModel)]="offre.company.secteur" class="form-control show-tick" required>
+                                        <option value="undefined" selected></option>
+                                        <option value="Agence pub / Marketing Direct">Agence pub / Marketing Direct		</option>
+                                        <option value="Agriculture / Environnement">Agriculture / Environnement          </option>
+                                        <option value="Agroalimentaire">Agroalimentaire                      </option>
+                                        <option value="Ameublement / Décoration">Ameublement / Décoration             </option>
+                                        <option value="Assurance / Courtage">Assurance / Courtage                 </option>
+                                        <option value="Audiovisuel">Audiovisuel                          </option>
+                                        <option value="Automobile / Motos / Cycles">Automobile / Motos / Cycles          </option>
+                                        <option value="Autres Industries">Autres Industries                    </option>
+                                        <option value="Autres services">Autres services                      </option>
+                                        <option value="Aéronautique / Spatial">Aéronautique / Spatial               </option>
+                                        <option value="BTP / Génie Civil">BTP / Génie Civil                    </option>
+                                        <option value="Banque / Finance">Banque / Finance                     </option>
+                                        <option value="Centre d'appel">Centre d'appel                       </option>
+                                        <option value="Chimie / Parachimie / Peintures">Chimie / Parachimie / Peintures      </option>
+                                        <option value="Communication / Evénementiel">Communication / Evénementiel         </option>
+                                        <option value="Comptabilité / Audit">Comptabilité / Audit                 </option>
+                                        <option value="Conseil / Etudes">Conseil / Etudes                     </option>
+                                        <option value="Cosmétique / Parfumerie / Luxe">Cosmétique / Parfumerie / Luxe       </option>
+                                        <option value="Distribution">Distribution                         </option>
+                                        <option value="Electricité">Electricité                          </option>
+                                        <option value="Electro-mécanique / Mécanique">Electro-mécanique / Mécanique        </option>
+                                        <option value="Energie">Energie                              </option>
+                                        <option value="Enseignement / Formation">Enseignement / Formation             </option>
+                                        <option value="Extraction / Mines">Extraction / Mines                   </option>
+                                        <option value="Ferroviaire">Ferroviaire                          </option>
+                                        <option value="Hôtellerie / Restauration">Hôtellerie / Restauration            </option>
+                                        <option value="Immobilier / Promoteur / Agence">Immobilier / Promoteur / Agence      </option>
+                                        <option value="Import / Export / Négoce">Import / Export / Négoce             </option>
+                                        <option value="Informatique">Informatique                         </option>
+                                        <option value="Internet / Multimédia">Internet / Multimédia                </option>
+                                        <option value="Juridique / Cabinet d’avocats">Juridique / Cabinet d’avocats        </option>
+                                        <option value="Matériel Médical">Matériel Médical                     </option>
+                                        <option value="Métallurgie / Sidérurgie">Métallurgie / Sidérurgie             </option>
+                                        <option value="Offshoring / Nearshoring">Offshoring / Nearshoring             </option>
+                                        <option value="Papier / Carton">Papier / Carton                      </option>
+                                        <option value="Pharmacie / Santé">Pharmacie / Santé                    </option>
+                                        <option value="Presse">Presse                               </option>
+                                        <option value="Pétrole / Gaz">Pétrole / Gaz                        </option>
+                                        <option value="Recrutement / Intérim">Recrutement / Intérim                </option>
+                                        <option value="Service public / Administration">Service public / Administration      </option>
+                                        <option value="Tabac">Tabac                                </option>
+                                        <option value="Telecom">Telecom                              </option>
+                                        <option value="Textile / Cuir">Textile / Cuir                       </option>
+                                        <option value="Tourisme / Voyage / Loisirs">Tourisme / Voyage / Loisirs          </option>
+                                        <option value="Transport / Messagerie / Logistique">Transport / Messagerie / Logistique  </option>
+                                        </select>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">company</label>
+                                    <select style="border:1px solid ; " name="name" [(ngModel)]="offre.company.name" class="form-control show-tick" required>
+                                        <option value="undefined" selected></option>
+                                            <option *ngFor="let emp of companies"   value="{{emp.name}}" >{{emp.name}}</option>
+                                      
+                                        </select>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">specialite</label>
+                                    <select style="border:1px solid ; " name="metier" [(ngModel)]="offre.metier" class="form-control show-tick" required>
+                                            <option value="undefined" selected></option>
+                                            <option value="Achats / Supply Chain">Achats / Supply Chain                        </option>
+                                            <option value="Administration des ventes / SAV">Administration des ventes / SAV              </option>
+                                            <option value="Agriculture (métiers de l')">Agriculture (métiers de l')                  </option>
+                                            <option value="Assistanat de Direction / Services Généraux">Assistanat de Direction / Services Généraux    </option>
+                                            <option value="Assurance (métiers de l')">Assurance (métiers de l')                    </option>
+                                            <option value="Audit / Conseil">Audit / Conseil															   </option>
+                                            <option value="Avocat / Juriste / Fiscaliste">Avocat / Juriste / Fiscaliste                </option>
+                                            <option value="Banque (métiers de la)">Banque (métiers de la)                       </option>
+                                            <option value="Call Centers (métiers de)">Call Centers (métiers de)                    </option>
+                                            <option value="Caméraman / Monteur / Preneur de son">Caméraman / Monteur / Preneur de son         </option>
+                                            <option value="Commercial / Vente / Export">Commercial / Vente / Export                  </option>
+                                            <option value="Communication / Publicité / RP">Communication / Publicité / RP               </option>
+                                            <option value="Distribution (métiers de la)">Distribution (métiers de la)                 </option>
+                                            <option value="Electricité">Electricité                                  </option>
+                                            <option value="Enseignement">Enseignement                                 </option>
+                                            <option value="Environnement (métiers de l')">Environnement (métiers de l')                </option>
+                                            <option value="Gestion / Comptabilité / Finance">Gestion / Comptabilité / Finance             </option>
+                                            <option value="Gestion projet / Etudes / R&D">Gestion projet / Etudes / R&D                </option>
+                                            <option value="Hôtellerie / Restauration (métiers de)">Hôtellerie / Restauration (métiers de)       </option>
+                                            <option value="Immobilier / Promotion (métiers de)">Immobilier / Promotion (métiers de)          </option>
+                                            <option value="Imprimerie (métiers de l')">Imprimerie (métiers de l')                   </option>
+                                            <option value="Informatique / Electronique">Informatique / Electronique                  </option>
+                                            <option value="Journalisme / Traduction">Journalisme / Traduction                     </option>
+                                            <option value="Logistique / Transport (métiers de)">Logistique / Transport (métiers de)          </option>
+                                            <option value="Marketing">Marketing                                    </option>
+                                            <option value="Multimédia / Internet">Multimédia / Internet                        </option>
+                                            <option value="Médical / Paramédical">Médical / Paramédical                        </option>
+                                            <option value="Méthodes / Process / Industrialisation">Méthodes / Process / Industrialisation       </option>
+                                            <option value="Production / Qualité / Sécurité / Maintenance">Production / Qualité / Sécurité / Maintenanc </option>
+                                            <option value="RH / Personnel / Formation">RH / Personnel / Formation                   </option>
+                                            <option value="Responsable de Département">Responsable de Département                   </option>
+                                            <option value="Santé / Social (métiers de)">Santé / Social (métiers de)                  </option>
+                                            <option value="Sport / Loisirs (métiers de)">Sport / Loisirs (métiers de)                 </option>
+                                            <option value="Tourisme (métiers du)">Tourisme (métiers du)                        </option>
+                                            <option value="Travaux / Chantiers / BTP">Travaux / Chantiers / BTP                    </option>
+                                            <option value="Télécoms / Réseaux">Télécoms / Réseaux                           </option>
+                                            <option value="Urbanisme / architecture">Urbanisme / architecture                     </option>
+                                        </select>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">Niveau d’étude demandé</label>
+                                    <select style="border:1px solid ; " name="niveau_d_etude" [(ngModel)]="offre.niveau_d_etude_demande" class="form-control show-tick" required>
+                                            <option value="undefined" selected></option>
+                                            <option value="Bac +5 et plus">Bac +5 et plus		</option>	
+                                            <option value="Bac +4">Bac +4</option>
+                                            <option value="Bac +3">Bac +3	</option>
+                                            <option value="Bac +2">Bac +2	</option>
+                                            <option value="Qualification avant Bac">Qualification avant Bac</option>
+                                            <option value="Autodidacte">Autodidacte				</option>
+                                        </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">Expérience requise</label>
+                                    <select style="border:1px solid ; " name="niveau_d_experience" [(ngModel)]="offre.niveau_d_experience_requise" class="form-control show-tick" required>
+                                            <option value="undefined" selected></option>
+                                            <option value="De 1 à 3 ans">De 1 à 3 ans	 </option>	
+                                            <option value="De 3 à 5 ans">De 3 à 5 ans   </option>
+                                            <option value="De 5 à 10 ans">De 5 à 10 ans  </option>
+                                            <option value="De 10 à 20 ans">De 10 à 20 ans </option>
+                                            <option value="Débutant">Débutant       </option>
+                                            <option value="Moins de 1 an">Moins de 1 an  </option>
+                                            <option value="Plus de 20 ans">Plus de 20 ans </option>
+                                        </select>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 left-box">
+                <div class="card single-blog-post" *ngFor="let emp of Offres">
+                    <div class="body">
+
+                        <div style="margin-top: 0px;" class="card product_item_list">
+                            <div style="padding-bottom: 0px;" class="body table-responsive">
+                                <div *ngIf="utilisateur_id !== null && userRoles=='ROLE_CONDIDAT' " style="margin-bottom: 20px;margin-left:0px;" class="col-lg-12 col-md-12 ">
+                                    <div class="row">
+                                        <div class="col-lg-8 ">
+                                            <a (click)="offreToPostuler(emp.id)" style="color: #EE5B71;width:200px;font-size: 15px;font-weight: bold;" data-toggle="modal" data-target="#exampleModalCenter1" class="btn btn-raised btn-default ">postuler</a>
+                                        </div>
+                                        <div class="col-lg-4 ">
+                                            <ul class="meta list-inline">
+
+                                                <li *ngIf="!checkLike(emp) ">
+                                                    <a (click)="like(emp.id)">
+                                                        <i class="material-icons">thumb_up</i>Like</a>
+                                                </li>
+                                                <li *ngIf="checkLike(emp) "><a><i class="zmdi zmdi-check col-blue"></i>Like</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-8 left-box">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-8 left-box">
+                                                <div class="profile-image float-md-center"> <img style="border-radius: 20px; width: 80px;" *ngIf="emp.company.image == undefined" src="assets/images/profile.jpg" alt=""> <img style="border-radius: 20px; width: 130px;" *ngIf="emp.company.image !== undefined"
+                                                        src="{{ path }}/{{ emp.company.image }}" alt=""></div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-8 left-box">
+                                                <br>
+                                                <h6>{{ emp.company.name }} </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-8 left-box">
+                                        <div class="col-lg-12 col-md-6 col-12 hidden-sm-down">
+                                            <span style="font-size: 18px;">- agence : {{ emp.agence }}</span>
+                                            <br>
+                                            <span style="font-size: 18px;">- metier : {{ emp.metier }}</span>
+                                            <br>
+                                            <span style="font-size: 18px;">- type_contrat : {{ emp.type_contrat }}</span>
+                                            <br>
+                                            <span style="font-size: 18px;">- intitule_post : {{ emp.intitule_post }}</span>
+                                            <br>
+                                            <span style="font-size: 18px;">- Niveau d’étude demandé : {{ emp.niveau_d_etude_demande }}</span>
+                                            <br>
+                                            <span style="font-size: 18px;">- Expérience requise : {{ emp.niveau_d_experience_requise }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Add Lettre de motivation :</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-lg-1 col-md-12 col-sm-12">
+                    </div>
+                    <div class="col-lg-10 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+
+
+                                <div class="body">
+                                    <textarea name="lettreMotivation" [(ngModel)]="postulation.lettreMotivation" rows="10" cols="42" id="ckeditor">
+                                                                   
+                                            </textarea>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="postuler()" class="btn btn-raised btn-primary waves-effect">SUBMIT</button>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

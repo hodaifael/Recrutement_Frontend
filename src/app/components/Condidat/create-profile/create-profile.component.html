@@ -1,0 +1,165 @@
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Create profile
+
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="../home"><i class="zmdi zmdi-home"></i> MT-REKRUTE</a></li>
+                    <li class="breadcrumb-item active">Create profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Basic Validation -->
+
+        <!-- #END# Basic Validation -->
+        <!-- Advanced Validation -->
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-12 col-sm-12">
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="card">
+                    <form id="form_advanced_validation" (ngSubmit)="doSignup()">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="header">
+
+                                </div>
+                                <div class="body">
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">nom</label>
+                                        <input type="text" class="form-control" name="nom" [(ngModel)]="utilisateur.nom" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">prenom</label>
+                                        <input type="text" class="form-control" name="prenom" [(ngModel)]="utilisateur.prenom" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">userEmail</label>
+                                        <input type="text" class="form-control" name="userEmail" [(ngModel)]="utilisateur.userEmail" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">userPass</label>
+                                        <input type="text" class="form-control" name="userPass" [(ngModel)]="utilisateur.userPass" required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">adresse postale</label>
+                                        <input type="text" class="form-control" name="adresse_postale" [(ngModel)]="utilisateur.adresse_postale" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">numero telephone portable</label>
+                                        <input type="text" class="form-control" name="numero_telephone_portable" [(ngModel)]="utilisateur.numero_telephone_portable" required>
+
+                                    </div>
+
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">age</label>
+                                        <input type="number" class="form-control" name="age" [(ngModel)]="utilisateur.age" required>
+
+                                    </div>
+
+
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">specialite</label>
+                                        <select style="border:1px solid ; " name="specialite" [(ngModel)]="utilisateur.specialite" class="form-control show-tick" required>
+                                                <option></option>
+                                                <option value="Achats / Supply Chain">Achats / Supply Chain                        </option>
+                                                <option value="Administration des ventes / SAV">Administration des ventes / SAV              </option>
+                                                <option value="Agriculture (métiers de l')">Agriculture (métiers de l')                  </option>
+                                                <option value="Assistanat de Direction / Services Généraux">Assistanat de Direction / Services Généraux    </option>
+                                                <option value="Assurance (métiers de l')">Assurance (métiers de l')                    </option>
+                                                <option value="Audit / Conseil">Audit / Conseil															   </option>
+                                                <option value="Avocat / Juriste / Fiscaliste">Avocat / Juriste / Fiscaliste                </option>
+                                                <option value="Banque (métiers de la)">Banque (métiers de la)                       </option>
+                                                <option value="Call Centers (métiers de)">Call Centers (métiers de)                    </option>
+                                                <option value="Caméraman / Monteur / Preneur de son">Caméraman / Monteur / Preneur de son         </option>
+                                                <option value="Commercial / Vente / Export">Commercial / Vente / Export                  </option>
+                                                <option value="Communication / Publicité / RP">Communication / Publicité / RP               </option>
+                                                <option value="Distribution (métiers de la)">Distribution (métiers de la)                 </option>
+                                                <option value="Electricité">Electricité                                  </option>
+                                                <option value="Enseignement">Enseignement                                 </option>
+                                                <option value="Environnement (métiers de l')">Environnement (métiers de l')                </option>
+                                                <option value="Gestion / Comptabilité / Finance">Gestion / Comptabilité / Finance             </option>
+                                                <option value="Gestion projet / Etudes / R&D">Gestion projet / Etudes / R&D                </option>
+                                                <option value="Hôtellerie / Restauration (métiers de)">Hôtellerie / Restauration (métiers de)       </option>
+                                                <option value="Immobilier / Promotion (métiers de)">Immobilier / Promotion (métiers de)          </option>
+                                                <option value="Imprimerie (métiers de l')">Imprimerie (métiers de l')                   </option>
+                                                <option value="Informatique / Electronique">Informatique / Electronique                  </option>
+                                                <option value="Journalisme / Traduction">Journalisme / Traduction                     </option>
+                                                <option value="Logistique / Transport (métiers de)">Logistique / Transport (métiers de)          </option>
+                                                <option value="Marketing">Marketing                                    </option>
+                                                <option value="Multimédia / Internet">Multimédia / Internet                        </option>
+                                                <option value="Médical / Paramédical">Médical / Paramédical                        </option>
+                                                <option value="Méthodes / Process / Industrialisation">Méthodes / Process / Industrialisation       </option>
+                                                <option value="Production / Qualité / Sécurité / Maintenance">Production / Qualité / Sécurité / Maintenanc </option>
+                                                <option value="RH / Personnel / Formation">RH / Personnel / Formation                   </option>
+                                                <option value="Responsable de Département">Responsable de Département                   </option>
+                                                <option value="Santé / Social (métiers de)">Santé / Social (métiers de)                  </option>
+                                                <option value="Sport / Loisirs (métiers de)">Sport / Loisirs (métiers de)                 </option>
+                                                <option value="Tourisme (métiers du)">Tourisme (métiers du)                        </option>
+                                                <option value="Travaux / Chantiers / BTP">Travaux / Chantiers / BTP                    </option>
+                                                <option value="Télécoms / Réseaux">Télécoms / Réseaux                           </option>
+                                                <option value="Urbanisme / architecture">Urbanisme / architecture                     </option>
+                                            </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">Niveau d’étude</label>
+                                        <select style="border:1px solid ; " name="niveau_d_etude" [(ngModel)]="utilisateur.niveau_d_etude" class="form-control show-tick" required>
+                                                <option></option>
+                                                <option value="Bac +5 et plus">Bac +5 et plus		</option>	
+                                                <option value="Bac +4">Bac +4</option>
+                                                <option value="Bac +3">Bac +3	</option>
+                                                <option value="Bac +2">Bac +2	</option>
+                                                <option value="Qualification avant Bac">Qualification avant Bac</option>
+                                                <option value="Autodidacte">Autodidacte				</option>
+                                            </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;padding-left: 10px;" for="exampleInputEmail1" class="form-label">nbr d'Expérience  </label>
+                                        <select style="border:1px solid ; " name="niveau_d_experience" [(ngModel)]="utilisateur.niveau_d_experience" class="form-control show-tick" required>
+                                                <option></option>
+                                                <option value="De 1 à 3 ans">De 1 à 3 ans	 </option>	
+                                                <option value="De 3 à 5 ans">De 3 à 5 ans   </option>
+                                                <option value="De 5 à 10 ans">De 5 à 10 ans  </option>
+                                                <option value="De 10 à 20 ans">De 10 à 20 ans </option>
+                                                <option value="Débutant">Débutant       </option>
+                                                <option value="Moins de 1 an">Moins de 1 an  </option>
+                                                <option value="Plus de 20 ans">Plus de 20 ans </option>
+                                            </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="btn btn-default p-0">
+                                            <input type="file" (change)="selectFile($event)" />
+                                        </label>
+                                    </div>
+
+
+                                    <input class="btn btn-raised btn-primary waves-effect" type="submit" />
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Advanced Validation -->
+        <!-- Validation Stats -->
+
+        <!-- #END# Validation Stats -->
+    </div>
+</section>

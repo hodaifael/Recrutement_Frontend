@@ -1,0 +1,94 @@
+<section class="content profile-page ">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="card overflowhidden m-t-20">
+                    <div class="profile-header">
+                        <div class="profile_info row">
+                            <div class="col-lg-3 col-md-4 col-12">
+                                <div class="profile-image float-md-right"> <img *ngIf="responsableRh.image == undefined" src="assets/images/profile.jpg" alt=""> <img *ngIf="responsableRh.image !== undefined" src="{{ path }}/{{ responsableRh.image }}" alt=""></div>
+                            </div>
+                            <div class="col-lg-6 col-md-8 col-12">
+                                <h4 class="m-t-5 m-b-0"><strong>{{ responsableRh.nom }} {{ responsableRh.prenom }}</strong> </h4>
+                                <span class="job_post">{{responsableRh.userEmail}}</span>
+                                <p>{{responsableRh.company.name}} </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="content blog-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 left-box">
+                <div class="row">
+                    <div *ngFor="let emp of offres" class="col-lg-12 col-md-8 left-box">
+                        <div class="card single-blog-post">
+                            <div class="body">
+
+                                <ul class="meta list-inline">
+                                    <li class="dropdown" style="margin-right: 1000px;">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more-vert"></i> </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a routerLink="/updateOffre/{{emp.id}}">Update</a></li>
+                                            <li><a (click)="delete(emp.id)">Delete</a></li>
+                                        </ul>
+                                    </li>
+                                    <li *ngIf="emp.nbrPostulation > 0"><a routerLink="/postulations/{{emp.id}}"><i class="zmdi zmdi-account col-blue"></i>Posted By: {{ emp.nbrPostulation }}</a></li>
+                                    <li *ngIf="emp.nbrPostulation == 0"><a><i class="zmdi zmdi-account col-blue"></i>Posted By: {{ emp.nbrPostulation }}</a></li>
+                                </ul>
+                                <div style="padding-bottom: 0px;" class="card product_item_list">
+                                    <div style="padding-bottom: 0px;" class="body table-responsive">
+
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-8 left-box">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-8 left-box">
+                                                        <div class="profile-image float-md-center"> <img style="border-radius: 20px; width: 80px;" *ngIf="emp.company.image == undefined" src="assets/images/profile.jpg" alt=""> <img style="border-radius: 20px; width: 130px;" *ngIf="emp.company.image !== undefined"
+                                                                src="{{ path }}/{{ emp.company.image }}" alt=""></div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-8 left-box">
+                                                        <br>
+                                                        <h6>{{ emp.company.name }} </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-8 left-box">
+                                                <div class="col-lg-5 col-md-6 col-12 hidden-sm-down">
+                                                    <span style="font-size: 18px;">- agence : {{ emp.agence }}</span>
+                                                    <br>
+                                                    <span style="font-size: 18px;">- metier : {{ emp.metier }}</span>
+                                                    <br>
+                                                    <span style="font-size: 18px;">- type_contrat : {{ emp.type_contrat }}</span>
+                                                    <br>
+                                                    <span style="font-size: 18px;">- intitule_post : {{ emp.intitule_post }}</span>
+                                                    <br>
+                                                    <span style="font-size: 18px;">- Niveau d’étude demandé : {{ emp.niveau_d_etude_demande }}</span>
+                                                    <br>
+                                                    <span style="font-size: 18px;">- Expérience requise : {{ emp.niveau_d_experience_requise }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

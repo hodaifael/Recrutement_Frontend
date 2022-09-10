@@ -1,0 +1,79 @@
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- Search  -->
+
+<!-- Top Bar -->
+
+<nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-life-ring" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div style="margin-left: 25px;" class="navbar-header">
+            <a class="navbar-brand" routerLink="/home">MT-REKRUTE</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+
+
+                <!-- condidat  and RH -->
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="!checktypeIfAdmin()" routerLink="/ListOffres">List Offres</a>
+                </li>
+
+                <!-- condidat -->
+
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfCondidat()" routerLink="/updateProfileCandidat">update Profile</a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfCondidat()" routerLink="/myProfile">myProfile</a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfCondidat()" routerLink="/myEntretien">myInterviews</a>
+                </li>
+
+
+                <!-- RH -->
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLinkActive="active" routerLink="/createProfileRH">update Profile</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLinkActive="active" routerLink="/singleOffre/28">singleOffre</a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLinkActive="active" routerLink="/addOffre">Add Offre</a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLink="/MyOffres">offres</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLink="/MyEntretiens">interviews</a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfResponsableRH()" routerLink="/ListPofiles">Pofiles</a>
+                </li>
+
+
+
+                <!-- Admin -->
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfAdmin()" routerLink="/createProfileAdmin">update Profile</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfAdmin()" routerLink="/gereComptes">manage Accounts
+                </a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="checkIfUtilisateur_id() && checktypeIfAdmin()" routerLink="/createCompany">create Company</a>
+                </li>
+
+
+
+                <!-- all -->
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="isUserSignedin()" (click)="doSignout()">logout <i
+                    class="zmdi zmdi-power"></i></a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="!isUserSignedin() && checkcreateProfile()" routerLink="/createProfile">Register </a>
+                </li>
+
+                <li class="nav-item" role="presentation"><a class="nav-href" *ngIf="!isUserSignedin()" routerLink="/signin">login <i
+                    class="zmdi zmdi-power"></i></a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

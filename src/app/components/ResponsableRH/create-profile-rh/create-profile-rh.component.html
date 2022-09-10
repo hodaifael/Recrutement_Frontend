@@ -1,0 +1,96 @@
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Update profile
+
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="../home"><i class="zmdi zmdi-home"></i> MT-REKRUTE</a></li>
+                    <li class="breadcrumb-item active">Update profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Basic Validation -->
+
+        <!-- #END# Basic Validation -->
+        <!-- Advanced Validation -->
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-12 col-sm-12">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="card">
+                    <form id="form_advanced_validation" (ngSubmit)="createUtilisateur()">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="header">
+
+                                </div>
+                                <div class="body">
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">userEmail</label>
+                                        <input type="text" class="form-control" name="userEmail" [(ngModel)]="utilisateur.userEmail" disabled>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">new password</label>
+                                        <input type="text" class="form-control" name="passeword" [(ngModel)]="passeword" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">nom</label>
+                                        <input type="text" class="form-control" name="nom" [(ngModel)]="utilisateur.nom" required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">prenom</label>
+                                        <input type="text" class="form-control" name="prenom" [(ngModel)]="utilisateur.prenom" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">adresse postale</label>
+                                        <input type="text" class="form-control" name="adresse_postale" [(ngModel)]="utilisateur.adresse_postale" required>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">numero telephone portable</label>
+                                        <input type="text" class="form-control" name="numero_telephone_portable" [(ngModel)]="utilisateur.numero_telephone_portable" required>
+
+                                    </div>
+
+
+
+                                    <div class="mb-3">
+                                        <label style="font-weight: bolder;" for="exampleInputEmail1" class="form-label">age</label>
+                                        <input type="number" class="form-control" name="age" [(ngModel)]="utilisateur.age" required>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="btn btn-default p-0">
+                                            <input type="file" (change)="selectFile($event)" />
+                                        </label>
+                                    </div>
+
+
+                                    <button class="btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Advanced Validation -->
+        <!-- Validation Stats -->
+
+        <!-- #END# Validation Stats -->
+    </div>
+</section>
